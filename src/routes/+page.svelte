@@ -9,6 +9,7 @@
 	let treeStates = []
 
 	const Conditions = ['Good!', 'Neutral', 'Sadly']
+	const ConditionImages = ['good', 'normal', 'bad']
 
 	async function loadTrees() {
 		try {
@@ -186,7 +187,7 @@
 		<div class="gallery">
 			{#each treeStates as t}
 				<div class="tree-card">
-					<img src="/good.png" alt="good condition">
+					<img src={`/${ConditionImages[t.state]}.png`} alt="good condition">
 					<button on:click={handleWaterTree(t.tokenId)} class="action-button" style="margin-top: -0.5em;">water the tree</button>
 					<p>Token ID: {t.tokenId}</p>
 					<p>Condition: {Conditions[t.state]}</p>
