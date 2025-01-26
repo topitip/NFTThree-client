@@ -179,11 +179,10 @@
 		{#if feedbackMsg}
 			<p>{feedbackMsg}</p>
 		{/if}
-		<button on:click={handleMint} disabled={isMinting} class="action-button">
+		<button on:click={handleMint} disabled={isMinting} class="action-button" style="margin-bottom: 30px;">
 			{isMinting ? '🌱 Planting...' : '🌱 Plant a Tree'}
 		</button>
 
-		<h2>Мои деревья</h2>
 		<div class="gallery">
 			{#each treeStates as t}
 				<div class="tree-card">
